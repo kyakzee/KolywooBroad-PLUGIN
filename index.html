@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="KolywooBroad – Minecraft szerverirányító plugin." />
+    <title>KolywooBroad — Béta 0.3</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800;6..12,900&family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="enhancements.css" />
+    <link rel="stylesheet" href="unique.css" />
+    <link rel="stylesheet" href="console.css" />
+  </head>
+  <body>
+    <div class="page-glow"></div>
+    <div class="noise"></div>
+    <header class="site-header">
+      <nav class="nav shell" aria-label="Fő navigáció">
+        <a class="brand" href="#kezdo"><span class="brand-mark">K</span><span>Kolywoo<b>Broad</b></span></a>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links">☰</button>
+        <div class="nav-links" id="nav-links"><a href="#modulok">Modulok</a><a href="#parancsok">Parancstár</a><a href="#inditas">Indítás</a><a class="nav-download" href="KolywooBroad.jar" download>Letöltés <span>↓</span></a></div>
+      </nav>
+    </header>
+
+    <main id="kezdo">
+      <section class="command-deck shell">
+        <div class="deck-copy reveal">
+          <p class="signal"><span></span> MINDEN RENDSZER ONLINE</p>
+          <h1>Ne csak<br /><em>kezeld.</em><br />Irányítsd.</h1>
+          <p class="deck-intro">A KolywooBroad egy magyar nyelvű szervervezérlő plugin. Üzenetek, admin eszközök, teleportok és játékmenet — egyetlen, átlátható rendszerben.</p>
+          <div class="deck-actions"><a class="launch-button" href="KolywooBroad.jar" download><span class="launch-icon">↓</span><span>KOLYWOOBROAD<br /><b>LETÖLTÉSE</b></span><i>BÉTA 0.3</i></a><a class="outline-button" href="#modulok">Felfedezem <span>↘</span></a></div>
+          <div class="compatibility"><span class="status-dot"></span> Paper és Spigot <b>1.16+</b></div>
+        </div>
+
+        <div class="broadcast-console reveal delay-1" aria-label="KolywooBroad globális üzenet előnézet">
+          <div class="console-chrome"><div><i></i><i></i><i></i></div><span>KOLYWOOBROAD / BROADCAST CONSOLE</span><b>● ONLINE</b></div>
+          <div class="console-workspace">
+            <aside class="console-sidebar"><span class="side-logo">K</span><i class="side-active">✦</i><i>⌘</i><i>↗</i><i>⚙</i><i>⚔</i></aside>
+            <div class="console-main">
+              <div class="console-heading"><div><small>AKTÍV MODUL</small><h3>Globális üzenet</h3></div><span class="live-pill">● LIVE</span></div>
+              <div class="message-preview"><div class="preview-top"><span>✦</span><small>KOLYWOOBROAD • HIRDETÉS</small><b>00:08</b></div><strong>Közeleg az esemény!</strong><p>Készülj fel, hamarosan indulunk.</p><div class="preview-bar"><i></i></div></div>
+              <div class="command-input"><span>›</span><code>/globalchat Közeleg az esemény!</code><b>ENTER ↵</b></div>
+              <div class="console-footer"><span><i></i> 24 játékos elérve</span><span>Utolsó küldés: épp most</span></div>
+            </div>
+          </div>
+          <div class="console-float float-command"><span>⌘</span><div><small>PARANCSOK</small><b>32+ elérhető</b></div></div>
+          <div class="console-float float-shield"><span>✓</span><div><small>MODERÁCIÓ</small><b>Rendszer aktív</b></div></div>
+        </div>
+      </section>
+
+      <div class="command-ticker"><div><span>GLOBALCHAT</span><b>✦</b><span>MODERÁCIÓ</span><b>✦</b><span>TELEPORT</span><b>✦</b><span>COMBAT</span><b>✦</b><span>TRADE</span><b>✦</b><span>SMP ESZKÖZÖK</span><b>✦</b><span>GLOBALCHAT</span><b>✦</b><span>MODERÁCIÓ</span><b>✦</b><span>TELEPORT</span></div></div>
+
+      <section class="modules shell" id="modulok">
+        <div class="section-intro reveal"><p class="signal"><span></span> RENDSZER MODULOK</p><h2>Egy plugin.<br /><em>Teljes kontroll.</em></h2><p>Nem kell sok külön plugin között keresgélned. Az alap dolgok már itt vannak, közös stílusban és magyar üzenetekkel.</p></div>
+        <div class="module-bento">
+          <article class="module broadcast reveal"><div class="module-head"><span class="module-icon">✦</span><span>01 / ÜZENET</span></div><h3>Legyen mindenki képben.</h3><p>A globális üzenet a játékosok képernyőjének közepén jelenik meg. Ideális eseményekhez, figyelmeztetéshez vagy hírekhez.</p><div class="mini-command">/globalchat &lt;üzenet&gt;</div><div class="message-toast"><i>✦</i><span><small>GLOBÁLIS ÜZENET</small><b>Közeleg az esemény!</b></span></div></article>
+          <article class="module admin reveal delay-1"><div class="module-head"><span class="module-icon">⌘</span><span>02 / ADMIN</span></div><h3>Határozott eszközök.</h3><p>Ban, tempban, vanish, inventory betekintés és játékmódok.</p><div class="module-tags"><b>/kban</b><b>/vanish</b><b>/kinv</b><b>/gmc</b></div></article>
+          <article class="module travel reveal delay-2"><div class="module-head"><span class="module-icon">↗</span><span>03 / MOZGÁS</span></div><h3>Oda, ahová kell.</h3><p>TPA, otthonok, publikus warpok és admin teleportok.</p><div class="route-line"><i></i><i></i><i></i><i></i></div></article>
+          <article class="module utility reveal"><div class="module-head"><span class="module-icon">⚙</span><span>04 / SEGÉD</span></div><h3>Napi szervereszközök.</h3><p>Heal, feed, fly, speed, repair, tárgynév és privát üzenetek.</p><div class="utility-line"><code>/heal</code><code>/fly</code><code>/repair</code></div></article>
+          <article class="module arena reveal delay-1"><div class="module-head"><span class="module-icon">⚔</span><span>05 / JÁTÉKMENET</span></div><h3>Az SMP-hez hangolva.</h3><p>Combat kezelés, trade, képességes kardok, mobidézés és border.</p><div class="arena-meter"><i></i><i></i><i></i><i></i><i></i></div></article>
+        </div>
+      </section>
+
+      <section class="arsenal shell" id="parancsok">
+        <div class="arsenal-title reveal"><div><p class="signal"><span></span> PARANCSTÁR</p><h2>A szervered<br /><em>eszköztára.</em></h2></div><p>Minden fontos parancs egy helyen. A jogosultságok és leírások a pluginon belül is magyarul érhetők el.</p></div>
+        <div class="command-list">
+          <div class="command-category reveal"><h3><i>01</i> Üzenetek</h3><div class="command-grid"><div class="command-row"><code>/globalchat &lt;üzenet&gt;</code><span>Üzenet minden játékosnak</span></div><div class="command-row"><code>/mglc &lt;üzenet&gt;</code><span>Mini üzenet a hotbar felett</span></div><div class="command-row"><code>/kolywoo</code><span>Kolywoo üzenet küldése</span></div><div class="command-row"><code>/kmsg · /kr</code><span>Privát üzenet és válasz</span></div></div></div>
+          <div class="command-category reveal"><h3><i>02</i> Moderáció & admin</h3><div class="command-grid"><div class="command-row"><code>/kban · /unban</code><span>Játékos tiltása vagy feloldása</span></div><div class="command-row"><code>/ktempban · /ktempbanip</code><span>Ideiglenes tiltás</span></div><div class="command-row"><code>/kvanish</code><span>Láthatatlanság kapcsolása</span></div><div class="command-row"><code>/kinv · /kinvec</code><span>Inventory és enderchest</span></div><div class="command-row"><code>/kgmc · /kgms · /kgma · /kgmsp</code><span>Játékmód gyors váltása</span></div></div></div>
+          <div class="command-category reveal"><h3><i>03</i> Teleport & helyek</h3><div class="command-grid"><div class="command-row"><code>/tpa · /tpahere</code><span>Teleportkérés küldése</span></div><div class="command-row"><code>/tpaccept · /tpdeny</code><span>Kérés elfogadása vagy elutasítása</span></div><div class="command-row"><code>/tp · /tpo · /tphere</code><span>Admin teleport parancsok</span></div><div class="command-row"><code>/tpoffline</code><span>Offline játékos utolsó helye</span></div><div class="command-row"><code>/home · /sethome · /delhome</code><span>Saját otthonok kezelése</span></div><div class="command-row"><code>/warp · /setwarp · /delwarp</code><span>Publikus warpok kezelése</span></div></div></div>
+          <div class="command-category reveal"><h3><i>04</i> Játékmenet & szerver</h3><div class="command-grid"><div class="command-row"><code>/kcombat · /kwins</code><span>Combat és fun itemek</span></div><div class="command-row"><code>/ksummon · /kgive</code><span>Mob idézés és item adás</span></div><div class="command-row"><code>/kshardes · /ability</code><span>Képességes kardok</span></div><div class="command-row"><code>/ktrade · /ktradeaccept · /ktradedeny</code><span>Biztonságos játékos trade</span></div><div class="command-row"><code>/kday · /kdays · /kbordersmps</code><span>SMP nap és világborder</span></div></div></div>
+          <div class="command-category reveal"><h3><i>05</i> Hasznos eszközök</h3><div class="command-grid"><div class="command-row"><code>/kheal · /kfeed</code><span>Élet és éhség feltöltése</span></div><div class="command-row"><code>/kfly · /kspeed</code><span>Repülés és sebesség</span></div><div class="command-row"><code>/kflyspeed · /kwalkspeed</code><span>Repülési és sétálási sebesség</span></div><div class="command-row"><code>/krepair · /kiname</code><span>Javítás és tárgy átnevezés</span></div><div class="command-row"><code>/kzenek · /kolywoobroad reload · /khelp</code><span>Zene, újratöltés, segítség</span></div></div></div>
+        </div>
+      </section>
+
+      <section class="launch-zone" id="inditas"><div class="shell launch-card reveal"><div class="launch-number">0.3</div><div class="launch-copy"><p class="signal"><span></span> KOLYWOOBROAD / BÉTA</p><h2>Indítsd el<br />a szerveredet.</h2><p>Helyezd a JAR fájlt a szervered <code>plugins</code> mappájába, indítsd újra, és már használhatod is.</p></div><a class="launch-button" href="KolywooBroad.jar" download><span class="launch-icon">↓</span><span>PLUGIN<br /><b>LETÖLTÉSE</b></span><i>BÉTA 0.3</i></a></div></section>
+    </main>
+    <footer><div class="shell footer-inner"><a class="brand" href="#kezdo"><span class="brand-mark">K</span><span>Kolywoo<b>Broad</b></span></a><p>© 2026 KolywooBroad — Minecraft szerverirányító plugin.</p><a href="#kezdo">FEL ↑</a></div></footer>
+    <script src="app.js"></script>
+  </body>
+</html>

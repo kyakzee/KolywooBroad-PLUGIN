@@ -1,0 +1,73 @@
+/* Finomított, kerekebb felületek és gördülés közbeni animációk. */
+:root { --round: 26px; }
+
+/* Egybefüggő, sötét gamer háttér – grafit alap, visszafogott vörös részletekkel. */
+body { background: #0b0d10; isolation: isolate; }
+body::after { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: -1; opacity: .22; background-image: linear-gradient(#ffffff06 1px, transparent 1px), linear-gradient(90deg, #ffffff06 1px, transparent 1px); background-size: 46px 46px; mask-image: linear-gradient(to bottom, #000, transparent 78%); }
+.page-glow { position: fixed; inset: 0; height: auto; z-index: -2; overflow: hidden; background: radial-gradient(circle at 8% 18%, #b1003a28 0 2px, #b1003a12 3px 58px, transparent 59px), radial-gradient(circle at 86% 13%, #b1003a20 0 3px, #b1003a0d 4px 86px, transparent 87px), radial-gradient(circle at 71% 69%, #8f13322b 0 3px, #8f13320b 4px 115px, transparent 116px), radial-gradient(circle at 18% 77%, #a51a3926 0 2px, #a51a390a 3px 94px, transparent 95px), radial-gradient(ellipse at 52% 42%, #1e151a 0%, transparent 62%), linear-gradient(135deg, #0b0d10 0%, #101013 48%, #0a0c0e 100%); }
+.page-glow::before, .page-glow::after { content: ''; position: absolute; display: block; border-radius: 50%; border: 1px solid #d82c5730; box-shadow: inset 0 0 24px #b1003a0d, 0 0 28px #8f143022; animation: driftBubble 12s ease-in-out infinite alternate; }
+.page-glow::before { width: 145px; height: 145px; top: 34%; left: 6%; box-shadow: inset 18px 18px 38px #b1003a0d, 0 0 28px #8f143022, 280px -160px 0 -52px #0000, 650px 280px 0 -48px #0000; }
+.page-glow::after { width: 90px; height: 90px; top: 60%; right: 9%; animation-duration: 16s; animation-direction: alternate-reverse; }
+@keyframes driftBubble { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(20px, -32px, 0); } }
+.feature-section { background: transparent; }
+
+.button, .nav-links .nav-download { border-radius: 999px; }
+.command-panel { border-radius: 32px; border-color: #ff779955; box-shadow: 18px 25px 0 #4a061b4d, 0 26px 70px #0008, inset 0 1px #ffffff18; }
+.panel-top { border-radius: 32px 32px 0 0; }
+.broadcast-preview { border-radius: 18px; }
+.console-line { border-radius: 15px; }
+.feature-card { border-radius: var(--round); border-color: #ffffff20; box-shadow: inset 0 1px #ffffff10, 0 15px 35px #0000001f; }
+.feature-card.featured { border-color: #ff72985c; box-shadow: inset 0 1px #ffffff18, 0 18px 45px #71002442; }
+.feature-card:hover { border-color: #ff71985c; box-shadow: inset 0 1px #ffffff23, 0 25px 40px #0008, 0 0 28px #b3003a28; }
+.install-wrap { border-radius: 32px; border-color: #ff76995c; box-shadow: inset 0 1px #ffffff1c, 0 18px 55px #00000042; }
+
+.command-list { display: grid; gap: 18px; background: transparent; border: 0; overflow: visible; }
+.command-category { background: linear-gradient(135deg, #1e151a, #131114); border: 1px solid #ffffff20; border-radius: 28px; padding: 22px; box-shadow: inset 0 1px #ffffff10, 0 15px 35px #0000001f; }
+.command-category h3 { margin: 0 0 15px; color: #f6dce3; font-size: 16px; letter-spacing: -.3px; }
+.command-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+.command-row { min-height: 68px; display: flex; flex-direction: column; justify-content: center; gap: 4px; padding: 13px 16px; border: 1px solid #ffffff12; border-radius: 17px; background: #0d0b0dd4; transition: transform .22s ease, border-color .22s ease, background .22s ease; }
+.command-row:hover { transform: translateY(-3px) scale(1.012); border-color: #e639665c; background: #26131b; }
+.command-row code { font-size: 12px; white-space: normal; }
+.command-row span { font-size: 12px; }
+
+body.is-scrolling .page-glow { animation: ambientScroll .55s ease-out; }
+body.is-scrolling .site-header { box-shadow: 0 7px 24px #00000030; }
+@keyframes ambientScroll { 50% { filter: brightness(1.26) saturate(1.15); } }
+.reveal { transform: translateY(34px) scale(.975); transition: opacity .72s cubic-bezier(.2,.8,.2,1), transform .72s cubic-bezier(.2,.8,.2,1), filter .72s; filter: blur(5px); }
+.reveal.visible { transform: none; filter: blur(0); }
+.command-category.visible .command-row { animation: commandIn .45s both; }
+.command-category.visible .command-row:nth-child(2) { animation-delay: .05s; }
+.command-category.visible .command-row:nth-child(3) { animation-delay: .1s; }
+.command-category.visible .command-row:nth-child(4) { animation-delay: .15s; }
+.command-category.visible .command-row:nth-child(5) { animation-delay: .2s; }
+.command-category.visible .command-row:nth-child(6) { animation-delay: .25s; }
+.command-category.visible .command-row:nth-child(7) { animation-delay: .3s; }
+@keyframes commandIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+/* Egérrel rámutatásra minden kattintható felület élőbbé válik. */
+.brand, .nav-links a, .button, .text-link, .footer-inner > a, .feature-card, .command-row, .install-wrap { will-change: transform; }
+.brand:hover { transform: translateY(-2px) rotate(-1deg); filter: drop-shadow(0 7px 10px #c600404d); }
+.brand-mark { transition: transform .3s cubic-bezier(.2,.9,.25,1.5), box-shadow .3s; }
+.brand:hover .brand-mark { transform: rotate(12deg) scale(1.13); box-shadow: 0 8px 23px #e1004e8c; }
+.nav-links a:not(.nav-download) { position: relative; }
+.nav-links a:not(.nav-download)::after { content: ''; position: absolute; left: 0; right: 0; bottom: -7px; height: 2px; border-radius: 999px; background: var(--light); transform: scaleX(0); transform-origin: center; transition: transform .25s ease; }
+.nav-links a:not(.nav-download):hover::after { transform: scaleX(1); }
+.nav-download:hover, .button.primary:hover { transform: translateY(-4px) scale(1.025); filter: brightness(1.13); }
+.button.ghost:hover { transform: translateY(-4px); border-color: #ff7799a3; background: #ffffff0c; box-shadow: 0 10px 25px #0006; }
+.button:hover > span:last-child, .text-link:hover span { transform: translateX(5px); }
+.button > span:last-child, .text-link span { transition: transform .22s ease; }
+.feature-card:hover .icon { animation: iconBounce .55s cubic-bezier(.2,.9,.25,1.2); text-shadow: 0 0 18px #ff3f7294; }
+.feature-card:hover .tag { color: #ffd2de; transform: translateX(4px); }
+.tag { transition: color .22s, transform .22s; }
+.command-category { transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
+.command-category:hover { transform: translateY(-4px); border-color: #ee557a52; box-shadow: inset 0 1px #ffffff15, 0 24px 42px #00000045; }
+.install-wrap { transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+.install-wrap:hover { transform: translateY(-5px); border-color: #ff76998a; box-shadow: inset 0 1px #ffffff25, 0 25px 65px #65002055; }
+.install-wrap:hover .button { transform: translateY(-3px) scale(1.03); }
+.footer-inner > a:last-child { transition: color .2s ease, transform .2s ease; }
+.footer-inner > a:last-child:hover { color: #ff95ae; transform: translateY(-3px); }
+@keyframes iconBounce { 50% { transform: translateY(-6px) rotate(-9deg) scale(1.15); } }
+
+@media (max-width: 800px) { .command-grid { grid-template-columns: 1fr; } }
+@media (max-width: 580px) { .command-category { padding: 17px; border-radius: 23px; } .command-row { border-radius: 15px; min-height: 0; } .command-panel { border-radius: 25px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
